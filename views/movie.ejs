@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/67cf5822e8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+body{
+    background-color: rgba(0, 0, 0, 0.96);
+}
+
+.image1 {
+    height: 60px;
+    width: 100px;
+}
+
+#navItem1 {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-weight:bold;
+}
+
+#navItem2 {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-weight:bold;
+}
+#navItem3{
+    color: #323f4b;
+    font-family: "Roboto";
+    font-weight:bold;
+}
+.image2 {
+    height: 450px;
+}
+
+.heading {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 28px;
+    color: #d0b200;
+}
+.card-container{
+    height:200px;
+}
+.image3 {
+    height: 200px;
+    width: 200px;
+}
+.head2 {
+    font-family: Roboto;
+    color: #d0b200;
+    font-weight: 800;
+}
+.image4 {
+    height: 300px;
+}
+
+.star-card {
+    color: #d0b200;
+}
+
+span {
+    font-family: Roboto;
+    margin-top: 15px;
+    font-size: 18px;
+    color:#ffffff;
+}
+.follow-us-section {
+    margin:auto;
+}
+
+.follow-us-section-heading {
+    text-align: center;
+    color: #d0b200;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.follow-us-icon-container {
+    background-color: #faf7e8;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 15px;
+    padding-top: 22px;
+    padding-bottom: 14px;
+    padding-right: 16px;
+    padding-left: 22px;
+}
+
+.icon {
+    color: #d0b200;
+    font-size: 35px;
+}
+
+    </style>
+</head>
+<body>
+    <form method="POST" action="/getMovie">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                            <a class="navbar-brand" href="#"><img src="https://i.ytimg.com/vi/kicMkH_C__A/maxresdefault.jpg" class="image1"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+    
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#" id="navItem1">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" id="navItem3">WatchList</a>
+                                      </li>
+
+    
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown navItem2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Content
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#sectionUpcomingMovies">Upcoming Movies</a>
+                                            <a class="dropdown-item" href="#sectionMoviesList">Top 10 movies in rating</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#followUsSection">Follow Us</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Enter the movie" aria-label="Search" name="movie">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mt-3">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://chotanews.blob.core.windows.net/filmify-en/2023/05/Pi7_Image_MahanatiL.jpg" class="d-block w-100 image2" alt="mahanati">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.mapsofindia.com/ci-moi-images/my-india/2019/07/dear-comrade.jpg" class="d-block w-100 image2" alt="dear comrade">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.andhrawishesh.com/images/phocagallery/Wallpapers/Movies/Telugu/MaharshiMovieWallpapers/Maharshi-Movie-Wallpapers-03.jpg" class="d-block w-100 image2" alt="maharshi">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.bollywoodhungama.com/wp-content/uploads/2019/08/saaho-001-3.jpg" class="d-block w-100 image2" alt="saaho">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://assets-in.bmscdn.com/discovery-catalog/events/et00077973-vdbblcpgfk-landscape.jpg" class="d-block w-100 image2" alt="jersey">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2017/10/28/Naga-Shourya-Chalo-First-Look-HD-Poster-.jpg?fit=3825%2C1800&quality=80&zoom=1&ssl=1" class="d-block w-100 image2" alt="chalo">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="mt-3">
+                        <h1 class="heading"> Up Next</h1>
+                        <div class="d-flex flex-row justify-content-center">
+                                <div class="embed-responsive embed-responsive-16by9 card-container w-50 mt-3">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HcAjTg8fpOM?rel=0" allowfullscreen></iframe>
+                                </div>
+        
+                                <div class="embed-responsive embed-responsive-16by9 card-container w-50 mt-3">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AsvGScyj4gw?rel=0" allowfullscreen></iframe>
+                                </div>
+        
+                                <div class="embed-responsive embed-responsive-16by9 card-container w-50 mt-3">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bUR_FKt7Iso?rel=0" allowfullscreen></iframe>
+                                </div>
+        
+        
+                            </div>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="embed-responsive embed-responsive-16by9 card-container w-50">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1iPCrcZV6Os?rel=0" allowfullscreen></iframe>
+                                </div>
+                                
+                                <div class="embed-responsive embed-responsive-16by9 card-container w-50">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jV7qK1kfD70?rel=0" allowfullscreen></iframe>
+                                </div>
+    
+                                <div class="embed-responsive embed-responsive-16by9 card-container w-50">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4eBpJE27OXc?rel=0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+        
+    
+                        
+                    </div>
+                    <div class="col-12">
+                        <div class="mt-3 id=sectionUpcomingMovies">
+                            <h2 class="head2"> Upcoming movies</h2>
+                            <div class="card-container2 d-flex flex-row justify-content-center">
+                                <div>
+                                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202307/f1zcm0paqaamjnp-three_four.jpg?VersionId=Seoj.amE4_xHpItwOnBGbnCeqYS20_fA" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://assetscdn1.paytm.com/images/cinema/bagwantakes-min-6b2ad9b0-0adb-11ee-8cb2-05fdd2ea0ec1.jpg" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202206/Kushi-poster_1654881514.jpg" class="image3">
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div>
+                                    <img src="https://m.media-amazon.com/images/M/MV5BMjdiMzUyNjYtNjQ2NC00ODUxLTgxMmUtMTViNWY4MjY3ZmI3XkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://static.moviecrow.com/gallery/20230616/216676-Leo%20Vijay%20Naa%20Ready%20Alter%20Ego.jpg" class="image3">
+                                </div>
+                                <div>
+                                    <img src="https://m.media-amazon.com/images/M/MV5BMjgzNzU5MmQtOWI3Yi00OWU2LWI0MmItNThjOTdlYzU0ZmNlXkEyXkFqcGdeQXVyMTIyMjMzODUx._V1_.jpg" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://cdn.gulte.com/wp-content/uploads/2023/05/Devara-First-Look-scaled.jpeg" class="image3">
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div>
+                                    <img src="https://moviegalleri.net/wp-content/uploads/2023/03/Game-Changer-Movie-Ram-Charan-Birthday-Wishes-Poster-HD.jpg" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://i0.wp.com/moviegalleri.net/wp-content/uploads/2023/04/Allu-Arjun-Pushpa-2-First-Look-HD-Poster.jpg?ssl=1" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://images.news18.com/ibnlive/uploads/2022/04/tiger-nageswara-rao.jpg" class="image3">
+                                </div>
+        
+                                <div>
+                                    <img src="https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2023/06/01/Superstar-Mahesh-Babu-s-Guntur-Karam-Movie-HD-Posters-and-Stills-1.jpg?fit=1800%2C2550&quality=80&zoom=1&ssl=1?v=1685636219" class="image3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sectionMoviesList">
+                        <div class="col-12">
+                            <h1 class="head2"> Top 10 movies in rating</h1>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="card-container3">
+                                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/15d5f274397241.5c2e6c255e5cb.jpg" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.8 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger"> WatchList</button>
+                                    </div>
+                                </div>
+                                <div class="card-container3">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BMmQwNjExNzctMGE1NC00NGU2LWEwN2ItMzljZmU4ODk5ZGRmXkEyXkFqcGdeQXVyMzA0NTI2OTM@._V1_.jpg" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 9.1 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger">WatchList</button>
+                                    </div>
+                                </div>
+        
+                                <div class="card-container3">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BYjc0MWFiYTMtNmYyOS00ODczLWEyMzItNzI4YjY0YjJjZGVjXkEyXkFqcGdeQXVyNzEwNjg3MjE@._V1_.jpg" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.5 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger">WatchList</button>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="card-container3">
+                                    <img src="https://images.sr.roku.com/idType/roku/context/global/id/7d96731eb0365e54b509e965a000ffe8/images/gracenote/assets/p22620667_v_v8_aa.jpg/magic/396x0/filters:quality(70)" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.6 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger"> WatchList</button>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="card-container3">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_vl/sources/r1/cms/prod/2831/552831-v" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.8 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger"> WatchList</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="d-flex flex-right justify-content-center">
+                                <div class="card-container3">
+                                    <img src="https://alchetron.com/cdn/Aha-Naa-Pellanta-1987-film-images-b7ff2d09-893b-4350-9395-a1bb7f0b39c.jpg" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 9.0 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger"> WatchList</button>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="card-container3">
+                                    <img src="https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2018/05/04/Mahanati-Movie-HD-Stills-and-Wallpapers-.jpg?fit=960%2C1280&quality=80&zoom=1&ssl=1" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.4 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger">WatchList</button>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="card-container3">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BNjMzYWJkNmMtZDhmZC00ZmViLTljNGUtZjZkYWRmZmQ3MjM5XkEyXkFqcGdeQXVyMTE1MTYxMzk2._V1_.jpg" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.3 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger">WatchList</button>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="card-container3">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BNGZjNDBhNGQtM2M4Ny00ZTVhLTk4ZWMtNDMyNzQ2Mjk0ZGJhXkEyXkFqcGdeQXVyNjQ1MDcxNzM@._V1_.jpg" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.6 </span>
+                                        </svg> <br>
+                                        <button class="button btn btn-outline-danger">WatchList</button>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="card-container3">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_vl/sources/r1/cms/prod/5085/635085-v" class="image4 w-75">
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star star-card" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" /> <span> 8.2 </span>
+        
+                                     </svg> <br>
+                                     </div>
+                                    <button class="button btn btn-outline-danger">WatchList</button>
+                                </div>
+                            </div>
+        
+        
+                        </div>
+        
+                    </div>
+                    <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1 class="follow-us-section-heading">Follow Us</h1>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex flex-row justify-content-center">
+                                        <div class="follow-us-icon-container">
+                                            <a href="https://twitter.com/IMDb_in"><i class="fab fa-twitter icon"></i></a>
+                                        </div>
+                                        <div class="follow-us-icon-container">
+                                            <a href="https://www.instagram.com/imdb_in/"><i class="fab fa-instagram icon"></i></a>
+                                        </div>
+                                        <div class="follow-us-icon-container">
+                                            <a href="https://www.facebook.com/imdb"><i class="fab fa-facebook icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

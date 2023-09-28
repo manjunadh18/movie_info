@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg-container {
+    background-color: #f5f7fa;
+}
+
+.image1 {
+    height: 100px;
+    object-fit: cover;
+}
+
+.heading {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 700;
+}
+#err{
+    color: red;
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+    <form action="/signupSubmit" method="POST">
+    <div class="bg-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center p-5">
+                        <img src="https://i.ytimg.com/vi/kicMkH_C__A/maxresdefault.jpg" class="image1 w-50">
+                    </div>
+                    <div class="card-container shadow p-3 text-center m-auto">
+                        <h1 class="heading"> Create Account</h1>
+                            <p id="err"><%= errMsg %></p>
+                            <label> Name:<br>
+                                <input type="text" placeholder="Enter your name" name="Uname" required></label><br>
+                            <label> Email:<br>
+                                <input type="email" placeholder="Enter your email" name="email" required></label><br>
+                            <label> Password:<br>
+                                <input type="password" placeholder="Enter your password" name="password" required></label><br>
+                            <label> Re Enter Password:<br>
+                                <input type="password" placeholder="Re enter password" name="password1" required></label><br>
+                            <button type="submit" class="btn btn-danger"> Create your account</button>
+                            <hr>
+                            <p> Already have an account? <a href="/login" >Login</a></p>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </form>
+</body>
+
+</html>
